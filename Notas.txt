@@ -1,0 +1,58 @@
+Backend
+Empleados
+    GET - /empleados (Cesar)
+    POST - /empleadoNombre (Gabriel)
+    POST - /empleadoDepartamento (Gabriel)
+    POST - /empleadoSueldo(Kevin)
+    POST - /agregarEmpleado(Cesar)
+    POST - /modificarEmpleado (Gabriel)
+    POST - /eliminarEmpleado (Dayana)
+    GET - /reporteEmpleados (Kevin)
+Discos
+    GET - /discos (Gabriel)
+    POST - /discoTitulo (Dayana)
+    POST - /discoYear (Kevin)
+    POST - /discoArtista (Cesar)
+    POST - /agregarDisco (Gabriel)
+    POST - /modificarDisco(Dayana)
+    POST - /eliminarDisco(Kevin)
+    GET - /reporteDiscos(Dayana)
+Paises
+    GET - /paises (Kevin)
+    POST - /paisMoneda(Cesar)
+    POST - /paisIdioma(Gabriel)
+    POST - /contienente(Dayana)
+    POST - /agregarPais(Kevin)
+    POST - /modificarPais(Cesar)
+    GET - /reporteRegiones(Dayana)
+
+7 Dayana
+5 Cesar
+6 Gabriel
+6 Kevin
+
+
+24/06 avisar como vamos 
+Postman (punto de control)
+
+Frontend
+Pestañas
+
+
+
+Documentación
+Venta (Canva?/Presentación)
+Manual de usuario
+Manual tecnico
+
+opciones para desarrollar las weas 
+
+Django(a esto ya le sabe Cesar)
+Postman 
+Flask
+
+
+
+Opciones
+Angular
+Node.js
