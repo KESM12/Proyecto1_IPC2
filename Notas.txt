@@ -26,11 +26,17 @@ Paises
     POST - /modificarPais(Cesar)
     GET - /reporteRegiones(Dayana)
 
-7 Dayana
+6 Dayana
 5 Cesar
 6 Gabriel
 6 Kevin
 
+POST - /empleadoSueldo(Kevin) "/Bsueldo"
+GET - /reporteEmpleados (Kevin) "/ReporteEmpleados"
+POST - /discoYear (Kevin) '/yearDisco'
+POST - /eliminarDisco(Kevin) '/eliminarDisco'
+GET - /paises (Kevin) '/Paises'
+POST - /agregarPais(Kevin) '/agregarPais'
 
 24/06 avisar como vamos 
 Postman (punto de control)
