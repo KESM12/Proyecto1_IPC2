@@ -6,7 +6,7 @@ from xml.dom import minidom
 import xml.etree.ElementTree as ET
 from graphviz import Digraph 
 import pandas as pd
-from lxml import etree
+from xml import etree
 import json
 import os
 
