@@ -1,7 +1,20 @@
-<div id="navegador">
-<ul>
-<li><a href="Empleados">Empleados</a></li>
-<li><a href="Discos">Discos</a></li>
-<li><a href="Paises">Paises</a></li>
-</ul>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <title>Desktop Records</title>
+    {% load static %}
+    <link rel="stylesheet" type = "text/css" href="{% static 'estilos.css' %}">
+</head>
+<body>
+    <div id="navegador">
+        <ul>
+            <img src="{% static 'logo.jpeg' %}" alt="foto">
+            <li><a href="Empleados">Empleados</a></li>
+            <li><a href="Discos">Discos</a></li>
+            <li><a href="Paises">Paises</a></li>
+        </ul>
+    </div>
+</body>
+</html>
