@@ -12,3 +12,6 @@ def Discos(request):
     
 def Paises(request):
     return render(request, "Paises.xml")
+
+def RepEmpleados(request):
+    return render(request, "EmpleadosRep.xml")

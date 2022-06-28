@@ -1,0 +1,42 @@
+<mundo>
+  <continente name="Europa">
+    <pais moneda="Euro">
+      <nombre>Monaco</nombre>
+      <capital>Ciudad de monaco</capital>
+      <idioma>Frances</idioma>
+      <poblacion year="2019" unit="thousands">38.964</poblacion>
+    </pais>
+  </continente>
+  <continente name="Europa">
+    <pais moneda="Euro">
+      <nombre>Autria</nombre>
+      <capital>Viena</capital>
+      <idioma>Aleman</idioma>
+      <poblacion year="2019" unit="millions">8.859</poblacion>
+    </pais>
+  </continente>
+  <continente name="America">
+    <pais moneda="Quetzal">
+      <nombre>Guatemala</nombre>
+      <capital>Ciudad de Guatemala</capital>
+      <idioma>Español</idioma>
+      <poblacion year="2019" unit="millions">16.6</poblacion>
+    </pais>
+  </continente>
+  <continente name="Oceania">
+    <pais moneda="Dólar australiano">
+      <nombre>Australia</nombre>
+      <capital>Canberra</capital>
+      <idioma>Ingles</idioma>
+      <poblacion year="2020" unit="millions">25.69 </poblacion>
+    </pais>
+  </continente>
+  <continente name="Taros">
+    <pais moneda="Fresco">
+      <nombre>TaroCapital</nombre>
+      <capital>Malagala</capital>
+      <idioma>Aleman</idioma>
+      <poblacion year="1997" unit="unidadTaro">90.00</poblacion>
+    </pais>
+  </continente>
+</mundo>

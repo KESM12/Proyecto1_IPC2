@@ -22,4 +22,5 @@ urlpatterns = [
     path('Empleados', views.Empleados),
     path('Discos', views.Discos),
     path('Paises', views.Paises),
+    path('RepEmpleados', views.RepEmpleados),    
 ]

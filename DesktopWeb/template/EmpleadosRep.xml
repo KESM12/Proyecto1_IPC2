@@ -18,9 +18,7 @@
         </ul>
     </div>
     <div id="contenido">
-        <form method="get" action="/">
-            <input align="center" type="submit" value="Reporte Grafico">
-        </form>
+        <img src="{% static 'Reporte Empleados.jpg' %}">
     </div>
 
 </body>

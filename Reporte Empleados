@@ -1,0 +1,101 @@
+digraph {
+	Z [label="Desktop Records" shape=folder]
+	A1 [label="Departamento: Contabilidad" shape=box3d]
+	B1 [label="ID: 1" shape=box]
+	C1 [label="Nombre: Lusvin" shape=box]
+	D1 [label="Puesto: Gerente general" shape=box]
+	E1 [label="Salario: 4000.00" shape=box]
+	B1 -> C1
+	C1 -> D1
+	D1 -> E1
+	A1 -> B1
+	B2 [label="ID: 2" shape=box]
+	C2 [label="Nombre: Daniel Pérez" shape=box]
+	D2 [label="Puesto: Contador" shape=box]
+	E2 [label="Salario: 2000.00" shape=box]
+	B2 -> C2
+	C2 -> D2
+	D2 -> E2
+	A1 -> B2
+	Z -> A1
+	A2 [label="Departamento: RRHH" shape=box3d]
+	B3 [label="ID: 3" shape=box]
+	C3 [label="Nombre: Marta Torres" shape=box]
+	D3 [label="Puesto: Reclutadora" shape=box]
+	E3 [label="Salario: 3000.00" shape=box]
+	B3 -> C3
+	C3 -> D3
+	D3 -> E3
+	A2 -> B3
+	Z -> A2
+	A3 [label="Departamento: Ventas" shape=box3d]
+	B4 [label="ID: 4" shape=box]
+	C4 [label="Nombre: Julio Gomez" shape=box]
+	D4 [label="Puesto: Vendedor" shape=box]
+	E4 [label="Salario: 4000.00" shape=box]
+	B4 -> C4
+	C4 -> D4
+	D4 -> E4
+	A3 -> B4
+	B5 [label="ID: 5" shape=box]
+	C5 [label="Nombre: Mario Guerra" shape=box]
+	D5 [label="Puesto: Vendedor" shape=box]
+	E5 [label="Salario: 4000.00" shape=box]
+	B5 -> C5
+	C5 -> D5
+	D5 -> E5
+	A3 -> B5
+	B6 [label="ID: 6" shape=box]
+	C6 [label="Nombre: Erick Vasquez" shape=box]
+	D6 [label="Puesto: Jefe de vendedores" shape=box]
+	E6 [label="Salario: 7000.00" shape=box]
+	B6 -> C6
+	C6 -> D6
+	D6 -> E6
+	A3 -> B6
+	Z -> A3
+	A4 [label="Departamento: Caja" shape=box3d]
+	B7 [label="ID: 7" shape=box]
+	C7 [label="Nombre: Fernando Murcia" shape=box]
+	D7 [label="Puesto: Cajero" shape=box]
+	E7 [label="Salario: 5000.00" shape=box]
+	B7 -> C7
+	C7 -> D7
+	D7 -> E7
+	A4 -> B7
+	B8 [label="ID: 8" shape=box]
+	C8 [label="Nombre: Emanuel Pineda" shape=box]
+	D8 [label="Puesto: Cajero" shape=box]
+	E8 [label="Salario: 4500.00" shape=box]
+	B8 -> C8
+	C8 -> D8
+	D8 -> E8
+	A4 -> B8
+	Z -> A4
+	A5 [label="Departamento: Informatica" shape=box3d]
+	B9 [label="ID: 9" shape=box]
+	C9 [label="Nombre: Christian Falla" shape=box]
+	D9 [label="Puesto: Desarrollador" shape=box]
+	E9 [label="Salario: 7000.00" shape=box]
+	B9 -> C9
+	C9 -> D9
+	D9 -> E9
+	A5 -> B9
+	B10 [label="ID: 10" shape=box]
+	C10 [label="Nombre: Pablo Cesar" shape=box]
+	D10 [label="Puesto: DBA" shape=box]
+	E10 [label="Salario: 6000.00" shape=box]
+	B10 -> C10
+	C10 -> D10
+	D10 -> E10
+	A5 -> B10
+	B11 [label="ID: 11" shape=box]
+	C11 [label="Nombre: Taro" shape=box]
+	D11 [label="Puesto: Tecnico" shape=box]
+	E11 [label="Salario: 5000.00" shape=box]
+	B11 -> C11
+	C11 -> D11
+	D11 -> E11
+	A5 -> B11
+	Z -> A5
+}
