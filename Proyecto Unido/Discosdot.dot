@@ -1,0 +1,368 @@
+digraph G { 
+node[shape=box] 
+nodoRaiz[label="Catalogo"] 
+cd0[label=" CD "] 
+nodoRaiz ->cd0
+cd0title[label="Titulo: empire burlesque "] 
+cd0Artista[label="Artista: bob dylan "] 
+cd0pais[label="País: usa "] 
+cd0compania[label="Compañia: columbia "] 
+cd0precio[label="Precio: 10.90 "] 
+cd0anio[label="Año: 1985 "] 
+cd0->cd0title
+cd0title->cd0pais
+cd0title->cd0Artista
+cd0title->cd0compania
+cd0title->cd0precio
+cd0title->cd0anio
+cd1[label=" CD "] 
+nodoRaiz ->cd1
+cd1title[label="Titulo: hide your heart "] 
+cd1Artista[label="Artista: bonnie tyler "] 
+cd1pais[label="País: uk "] 
+cd1compania[label="Compañia: cbs records "] 
+cd1precio[label="Precio: 9.90 "] 
+cd1anio[label="Año: 1988 "] 
+cd1->cd1title
+cd1title->cd1pais
+cd1title->cd1Artista
+cd1title->cd1compania
+cd1title->cd1precio
+cd1title->cd1anio
+cd2[label=" CD "] 
+nodoRaiz ->cd2
+cd2title[label="Titulo: greatest hits "] 
+cd2Artista[label="Artista: dolly parton "] 
+cd2pais[label="País: usa "] 
+cd2compania[label="Compañia: rca "] 
+cd2precio[label="Precio: 9.90 "] 
+cd2anio[label="Año: 1982 "] 
+cd2->cd2title
+cd2title->cd2pais
+cd2title->cd2Artista
+cd2title->cd2compania
+cd2title->cd2precio
+cd2title->cd2anio
+cd3[label=" CD "] 
+nodoRaiz ->cd3
+cd3title[label="Titulo: still got the blues "] 
+cd3Artista[label="Artista: gary moore "] 
+cd3pais[label="País: uk "] 
+cd3compania[label="Compañia: virgin records "] 
+cd3precio[label="Precio: 10.20 "] 
+cd3anio[label="Año: 1990 "] 
+cd3->cd3title
+cd3title->cd3pais
+cd3title->cd3Artista
+cd3title->cd3compania
+cd3title->cd3precio
+cd3title->cd3anio
+cd4[label=" CD "] 
+nodoRaiz ->cd4
+cd4title[label="Titulo: eros & eros "] 
+cd4Artista[label="Artista: eros ramazzotti "] 
+cd4pais[label="País: eu "] 
+cd4compania[label="Compañia: bmg "] 
+cd4precio[label="Precio: 9.90 "] 
+cd4anio[label="Año: 1997 "] 
+cd4->cd4title
+cd4title->cd4pais
+cd4title->cd4Artista
+cd4title->cd4compania
+cd4title->cd4precio
+cd4title->cd4anio
+cd5[label=" CD "] 
+nodoRaiz ->cd5
+cd5title[label="Titulo: \"esto tiene que salir bien\" "] 
+cd5Artista[label="Artista: bee gees "] 
+cd5pais[label="País: uk "] 
+cd5compania[label="Compañia: polydor "] 
+cd5precio[label="Precio: 10.90 "] 
+cd5anio[label="Año: 1998 "] 
+cd5->cd5title
+cd5title->cd5pais
+cd5title->cd5Artista
+cd5title->cd5compania
+cd5title->cd5precio
+cd5title->cd5anio
+cd6[label=" CD "] 
+nodoRaiz ->cd6
+cd6title[label="Titulo: 'esto tiene que salir muy bien tambien' "] 
+cd6Artista[label="Artista: dr.hook "] 
+cd6pais[label="País: uk "] 
+cd6compania[label="Compañia: cbs "] 
+cd6precio[label="Precio: 8.10 "] 
+cd6anio[label="Año: 1973 "] 
+cd6->cd6title
+cd6title->cd6pais
+cd6title->cd6Artista
+cd6title->cd6compania
+cd6title->cd6precio
+cd6title->cd6anio
+cd7[label=" CD "] 
+nodoRaiz ->cd7
+cd7title[label="Titulo: maggie may "] 
+cd7Artista[label="Artista: rod stewart "] 
+cd7pais[label="País: uk "] 
+cd7compania[label="Compañia: pickwick "] 
+cd7precio[label="Precio: 8.50 "] 
+cd7anio[label="Año: 1990 "] 
+cd7->cd7title
+cd7title->cd7pais
+cd7title->cd7Artista
+cd7title->cd7compania
+cd7title->cd7precio
+cd7title->cd7anio
+cd8[label=" CD "] 
+nodoRaiz ->cd8
+cd8title[label="Titulo: romanza "] 
+cd8Artista[label="Artista: andrea bocelli "] 
+cd8pais[label="País: eu "] 
+cd8compania[label="Compañia: polydor "] 
+cd8precio[label="Precio: 10.80 "] 
+cd8anio[label="Año: 1996 "] 
+cd8->cd8title
+cd8title->cd8pais
+cd8title->cd8Artista
+cd8title->cd8compania
+cd8title->cd8precio
+cd8title->cd8anio
+cd9[label=" CD "] 
+nodoRaiz ->cd9
+cd9title[label="Titulo: when a man loves a woman "] 
+cd9Artista[label="Artista: percy sledge "] 
+cd9pais[label="País: usa "] 
+cd9compania[label="Compañia: atlantic "] 
+cd9precio[label="Precio: 8.70 "] 
+cd9anio[label="Año: 1987 "] 
+cd9->cd9title
+cd9title->cd9pais
+cd9title->cd9Artista
+cd9title->cd9compania
+cd9title->cd9precio
+cd9title->cd9anio
+cd10[label=" CD "] 
+nodoRaiz ->cd10
+cd10title[label="Titulo: black angel "] 
+cd10Artista[label="Artista: savage rose "] 
+cd10pais[label="País: eu "] 
+cd10compania[label="Compañia: mega "] 
+cd10precio[label="Precio: 10.90 "] 
+cd10anio[label="Año: 1995 "] 
+cd10->cd10title
+cd10title->cd10pais
+cd10title->cd10Artista
+cd10title->cd10compania
+cd10title->cd10precio
+cd10title->cd10anio
+cd11[label=" CD "] 
+nodoRaiz ->cd11
+cd11title[label="Titulo: 1999 grammy nominees "] 
+cd11Artista[label="Artista: many "] 
+cd11pais[label="País: usa "] 
+cd11compania[label="Compañia: grammy "] 
+cd11precio[label="Precio: 10.20 "] 
+cd11anio[label="Año: 1999 "] 
+cd11->cd11title
+cd11title->cd11pais
+cd11title->cd11Artista
+cd11title->cd11compania
+cd11title->cd11precio
+cd11title->cd11anio
+cd12[label=" CD "] 
+nodoRaiz ->cd12
+cd12title[label="Titulo: for the good times "] 
+cd12Artista[label="Artista: kenny rogers "] 
+cd12pais[label="País: uk "] 
+cd12compania[label="Compañia: mucik master "] 
+cd12precio[label="Precio: 8.70 "] 
+cd12anio[label="Año: 1995 "] 
+cd12->cd12title
+cd12title->cd12pais
+cd12title->cd12Artista
+cd12title->cd12compania
+cd12title->cd12precio
+cd12title->cd12anio
+cd13[label=" CD "] 
+nodoRaiz ->cd13
+cd13title[label="Titulo: big willie style "] 
+cd13Artista[label="Artista: will smith "] 
+cd13pais[label="País: usa "] 
+cd13compania[label="Compañia: columbia "] 
+cd13precio[label="Precio: 9.90 "] 
+cd13anio[label="Año: 1997 "] 
+cd13->cd13title
+cd13title->cd13pais
+cd13title->cd13Artista
+cd13title->cd13compania
+cd13title->cd13precio
+cd13title->cd13anio
+cd14[label=" CD "] 
+nodoRaiz ->cd14
+cd14title[label="Titulo: tupelo honey "] 
+cd14Artista[label="Artista: van morrison "] 
+cd14pais[label="País: uk "] 
+cd14compania[label="Compañia: polydor "] 
+cd14precio[label="Precio: 8.20 "] 
+cd14anio[label="Año: 1971 "] 
+cd14->cd14title
+cd14title->cd14pais
+cd14title->cd14Artista
+cd14title->cd14compania
+cd14title->cd14precio
+cd14title->cd14anio
+cd15[label=" CD "] 
+nodoRaiz ->cd15
+cd15title[label="Titulo: soulsville "] 
+cd15Artista[label="Artista: jorn hoel "] 
+cd15pais[label="País: norway "] 
+cd15compania[label="Compañia: wea "] 
+cd15precio[label="Precio: 7.90 "] 
+cd15anio[label="Año: 1996 "] 
+cd15->cd15title
+cd15title->cd15pais
+cd15title->cd15Artista
+cd15title->cd15compania
+cd15title->cd15precio
+cd15title->cd15anio
+cd16[label=" CD "] 
+nodoRaiz ->cd16
+cd16title[label="Titulo: the very best of "] 
+cd16Artista[label="Artista: cat stevens "] 
+cd16pais[label="País: uk "] 
+cd16compania[label="Compañia: island "] 
+cd16precio[label="Precio: 8.90 "] 
+cd16anio[label="Año: 1990 "] 
+cd16->cd16title
+cd16title->cd16pais
+cd16title->cd16Artista
+cd16title->cd16compania
+cd16title->cd16precio
+cd16title->cd16anio
+cd17[label=" CD "] 
+nodoRaiz ->cd17
+cd17title[label="Titulo: stop "] 
+cd17Artista[label="Artista: sam brown "] 
+cd17pais[label="País: uk "] 
+cd17compania[label="Compañia: a and m "] 
+cd17precio[label="Precio: 8.90 "] 
+cd17anio[label="Año: 1988 "] 
+cd17->cd17title
+cd17title->cd17pais
+cd17title->cd17Artista
+cd17title->cd17compania
+cd17title->cd17precio
+cd17title->cd17anio
+cd18[label=" CD "] 
+nodoRaiz ->cd18
+cd18title[label="Titulo: bridge of spies "] 
+cd18Artista[label="Artista: t'pau "] 
+cd18pais[label="País: uk "] 
+cd18compania[label="Compañia: siren "] 
+cd18precio[label="Precio: 7.90 "] 
+cd18anio[label="Año: 1987 "] 
+cd18->cd18title
+cd18title->cd18pais
+cd18title->cd18Artista
+cd18title->cd18compania
+cd18title->cd18precio
+cd18title->cd18anio
+cd19[label=" CD "] 
+nodoRaiz ->cd19
+cd19title[label="Titulo: private dancer "] 
+cd19Artista[label="Artista: tina turner "] 
+cd19pais[label="País: uk "] 
+cd19compania[label="Compañia: capitol "] 
+cd19precio[label="Precio: 8.90 "] 
+cd19anio[label="Año: 1983 "] 
+cd19->cd19title
+cd19title->cd19pais
+cd19title->cd19Artista
+cd19title->cd19compania
+cd19title->cd19precio
+cd19title->cd19anio
+cd20[label=" CD "] 
+nodoRaiz ->cd20
+cd20title[label="Titulo: midt om natten "] 
+cd20Artista[label="Artista: kim larsen "] 
+cd20pais[label="País: eu "] 
+cd20compania[label="Compañia: medley "] 
+cd20precio[label="Precio: 7.80 "] 
+cd20anio[label="Año: 1983 "] 
+cd20->cd20title
+cd20title->cd20pais
+cd20title->cd20Artista
+cd20title->cd20compania
+cd20title->cd20precio
+cd20title->cd20anio
+cd21[label=" CD "] 
+nodoRaiz ->cd21
+cd21title[label="Titulo: pavarotti gala concert "] 
+cd21Artista[label="Artista: luciano pavarotti "] 
+cd21pais[label="País: uk "] 
+cd21compania[label="Compañia: decca "] 
+cd21precio[label="Precio: 9.90 "] 
+cd21anio[label="Año: 1991 "] 
+cd21->cd21title
+cd21title->cd21pais
+cd21title->cd21Artista
+cd21title->cd21compania
+cd21title->cd21precio
+cd21title->cd21anio
+cd22[label=" CD "] 
+nodoRaiz ->cd22
+cd22title[label="Titulo: the dock of the bay "] 
+cd22Artista[label="Artista: otis redding "] 
+cd22pais[label="País: usa "] 
+cd22compania[label="Compañia: stax records "] 
+cd22precio[label="Precio: 7.90 "] 
+cd22anio[label="Año: 1968 "] 
+cd22->cd22title
+cd22title->cd22pais
+cd22title->cd22Artista
+cd22title->cd22compania
+cd22title->cd22precio
+cd22title->cd22anio
+cd23[label=" CD "] 
+nodoRaiz ->cd23
+cd23title[label="Titulo: picture book "] 
+cd23Artista[label="Artista: simply red "] 
+cd23pais[label="País: eu "] 
+cd23compania[label="Compañia: elektra "] 
+cd23precio[label="Precio: 7.20 "] 
+cd23anio[label="Año: 1985 "] 
+cd23->cd23title
+cd23title->cd23pais
+cd23title->cd23Artista
+cd23title->cd23compania
+cd23title->cd23precio
+cd23title->cd23anio
+cd24[label=" CD "] 
+nodoRaiz ->cd24
+cd24title[label="Titulo: red "] 
+cd24Artista[label="Artista: the communards "] 
+cd24pais[label="País: uk "] 
+cd24compania[label="Compañia: london "] 
+cd24precio[label="Precio: 7.80 "] 
+cd24anio[label="Año: 1987 "] 
+cd24->cd24title
+cd24title->cd24pais
+cd24title->cd24Artista
+cd24title->cd24compania
+cd24title->cd24precio
+cd24title->cd24anio
+cd25[label=" CD "] 
+nodoRaiz ->cd25
+cd25title[label="Titulo: segundo disco "] 
+cd25Artista[label="Artista: bonnie tyler "] 
+cd25pais[label="País: uk "] 
+cd25compania[label="Compañia: cbs records "] 
+cd25precio[label="Precio: 9.90 "] 
+cd25anio[label="Año: 1988 "] 
+cd25->cd25title
+cd25title->cd25pais
+cd25title->cd25Artista
+cd25title->cd25compania
+cd25title->cd25precio
+cd25title->cd25anio
+}
