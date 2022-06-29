@@ -1,3 +1,6 @@
+import os
+
+
 class Disco: 
     def __init__(self,titulo, artista, pais, compania, precio, anio, ide):
         self.titulo = titulo
@@ -54,3 +57,40 @@ class ListaDiscos:
         print(f'Precio Disco: {primero.disco.precio}')
         disco.append(primero.disco)
         return disco
+
+    def retornar(self):
+        disco = []
+        primero = self.primero
+        while primero.siguiente!= None:
+            disco.append(primero.disco)
+            primero = primero.siguiente
+        disco.append(primero.disco)
+        return disco
+    
+    def escribirArchivo(self):
+        
+        cabeza = f'<?xml version="1.0" encoding = "utf-8"?> \n'
+        cabeza += '<catalog> \n'
+        primero = self.primero
+        while primero.siguiente!= None:
+            cabeza += f'\t<cd>\n'
+            cabeza += f'\t\t<title>{primero.disco.titulo}</title>\n'
+            cabeza += f'\t\t<artist>{primero.disco.artista}</artist>\n'
+            cabeza += f'\t\t<country>{primero.disco.pais}</country>\n'
+            cabeza += f'\t\t<company>{primero.disco.compania}</company>\n'
+            cabeza += f'\t\t<price>{primero.disco.precio}</price>\n'
+            cabeza += f'\t\t<year>{primero.disco.anio}</year>\n'
+            cabeza += f'\t</cd>\n'
+            primero = primero.siguiente
+        cabeza += f'\t<cd>\n'
+        cabeza += f'\t\t<title>{primero.disco.titulo}</title>\n'
+        cabeza += f'\t\t<artist>{primero.disco.artista}</artist>\n'
+        cabeza += f'\t\t<country>{primero.disco.pais}</country>\n'
+        cabeza += f'\t\t<company>{primero.disco.compania}</company>\n'
+        cabeza += f'\t\t<price>{primero.disco.precio}</price>\n'
+        cabeza += f'\t\t<year>{primero.disco.anio}</year>\n'
+        cabeza += f'\t</cd>\n'
+        cabeza += f'</catalog>'
+        with open(f'discos.xml','w', encoding="utf-8") as archivo: #pasar discos2.xml a discos.xml
+            archivo.write(cabeza)
+            archivo.close()

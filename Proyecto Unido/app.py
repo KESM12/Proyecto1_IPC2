@@ -1,4 +1,3 @@
-from msilib.schema import Directory
 from flask import Flask, request, jsonify,send_from_directory
 from flask.json import jsonify
 from flask_cors import CORS
@@ -7,6 +6,7 @@ from xml.dom import minidom
 import xml.etree.ElementTree as ET
 from graphviz import Digraph 
 from xml import etree
+from lxml import etree
 import json
 import os
 
@@ -82,7 +82,10 @@ def agregarDisco():
     compania = data["compania"]
     año = data["año"]
     discoN = LeerArchivo.listaD.AregarDisco(titulo, artista, pais,compania,precio,año)
-    aux.append({"Titulo": titulo, "Artista": artista, "Pais": pais, "Compañia":compania, "Precio":precio, "Año":año})
+    dico = LeerArchivo.listaD.retornar()
+    LeerArchivo.listaD.escribirArchivo()
+    for discon in dico:
+        aux.append({"Titulo": discon.titulo, "Artista": discon.artista, "Pais": discon.pais, "Compañia":discon.compania, "Precio":discon.precio, "Año":discon.anio})
     return jsonify(aux)
 
 @app.route("/cargarDatosPaises", methods=["POST"])
@@ -93,13 +96,24 @@ def cargarDatosPaises():
 
 @app.route("/paisIdioma", methods=["POST"])
 def paisIdioma ():
-    aux = []
-    data = request.get_json()
-    idioma = data["idioma"]
-    paises = LeerArchivo.listaP.BuscarIdioma(idioma)
-    for pais in paises:
-        aux.append({"Continente": pais.continente, "Moneda": pais.moneda, "Nombre": pais.nombre, "Capital": pais.capital, "Idioma" : pais.idioma, "Año Poblacion" : pais.poblacionAño, "Unidad de medida" : pais.poblacionUnidad, "Cantidad de Poblacion" : pais.poblacion})
-    return jsonify(aux)
+    idioma2 = str(request.json['idioma'])
+    idioma2 = idioma2.lower()
+    Paises = []
+    xml_data = ET.parse('mundo.xml')
+    continente = xml_data.findall('continente')
+    for paises in continente:
+        nombreCon = paises.get('name')
+        for pais in paises:
+            idioma = str(pais.find('idioma').text)
+            idiomaa = idioma.lower()
+            if idioma2 == idiomaa:
+                moneda = pais.get('moneda')
+                nombre = pais.find('nombre').text
+                capital = pais.find('capital').text
+                idioma = pais.find('idioma').text
+                añoo = pais.find('poblacion').attrib
+                Paises.append({"Continente":nombreCon, "Nombre":nombre, "Moneda":moneda, "Capital": capital, "Idioma": idioma, "Año de poblacion": añoo['year'], "Unidad de Medida": añoo['unit']})
+    return jsonify(Paises)
 
 
 
@@ -337,7 +351,7 @@ def modificarPaises(arbol_,continentebuscar_,nombrebuscar_,nuevacapital_,nuevoid
                 continente.findall('poblacion')[0].text = nuevapoblacion_
                 continente.findall('poblacion')[0].attrib['year'] = nuevoyear_
                 continente.findall('poblacion')[0].attrib['unit'] = nuevaunit_
-                arbol_.write('paises.xml',xml_declaration=True,encoding="utf-8")
+                arbol_.write('mundo.xml',xml_declaration=True,encoding="utf-8")
                 return
     print('No se encontro el Pais')
 

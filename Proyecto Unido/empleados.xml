@@ -1,7 +1,8 @@
-<?xml version="1.0" ?><empresa>
+<?xml version='1.0' encoding='utf-8'?>
+<empresa>
     <departamento departamento="Contabilidad">
         <empleado id="1">
-            <nombre>José Ernesto</nombre>
+            <nombre>Lusvin</nombre>
             <puesto>Gerente general</puesto>
             <salario>4000.00</salario>
         </empleado>
@@ -18,35 +19,50 @@
             <salario>3000.00</salario>
         </empleado>
     </departamento>
-    <departamento departamento="IT">
+    <departamento departamento="Ventas">
         <empleado id="4">
-            <nombre>Juan</nombre>
-            <puesto>Senior</puesto>
-            <salario>10000.00</salario>
+            <nombre>Julio Gomez</nombre>
+            <puesto>Vendedor</puesto>
+            <salario>4000.00</salario>
         </empleado>
-    </departamento>
-    <departamento departamento="Quinto">
         <empleado id="5">
-            <nombre>Marta Torres</nombre>
-            <puesto>Reclutadora</puesto>
-            <salario>3000.00</salario>
+            <nombre>Mario Guerra</nombre>
+            <puesto>Vendedor</puesto>
+            <salario>4000.00</salario>
+        </empleado>
+        <empleado id="6">
+            <nombre>Erick Vasquez</nombre>
+            <puesto>Jefe de vendedores</puesto>
+            <salario>7000.00</salario>
         </empleado>
     </departamento>
-    <departamento departamento="Sexto">
-        <empleado id="6">
-            <nombre>Juan</nombre>
-            <puesto>Senior</puesto>
-            <salario>10000.00</salario>
-        </empleado>
+    <departamento departamento="Caja">
         <empleado id="7">
-            <nombre>Juan</nombre>
-            <puesto>Senior</puesto>
-            <salario>10000.00</salario>
+            <nombre>Fernando Murcia</nombre>
+            <puesto>Cajero</puesto>
+            <salario>5000.00</salario>
         </empleado>
         <empleado id="8">
-            <nombre>Juan</nombre>
-            <puesto>Senior</puesto>
-            <salario>10000.00</salario>
+            <nombre>Emanuel Pineda</nombre>
+            <puesto>Cajero</puesto>
+            <salario>4500.00</salario>
         </empleado>
     </departamento>
-<departamento departamento="Prueba"/></empresa>
+    <departamento departamento="Informatica">
+        <empleado id="9">
+            <nombre>Christian Falla</nombre>
+            <puesto>Desarrollador</puesto>
+            <salario>7000.00</salario>
+        </empleado>
+        <empleado id="10">
+            <nombre>Pablo Cesar</nombre>
+            <puesto>DBA</puesto>
+            <salario>6000.00</salario>
+        </empleado>
+        <empleado id="11">
+            <nombre>Taro</nombre>
+            <puesto>Tecnico</puesto>
+            <salario>5000.00</salario>
+        </empleado>
+    </departamento>
+</empresa>

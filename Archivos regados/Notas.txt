@@ -1,30 +1,30 @@
 Backend
 Empleados
-    GET - /empleados (Cesar)
-    POST - /empleadoNombre (Gabriel)
-    POST - /empleadoDepartamento (Gabriel)
-    POST - /empleadoSueldo(Kevin)
-    POST - /agregarEmpleado(Cesar)
+    GET - /empleados (Cesar) ok / okG
+    POST - /empleadoNombre (Gabriel) ok
+    POST - /empleadoDepartamento (Gabriel) ok
+    POST - /empleadoSueldo(Kevin) ok
+    POST - /agregarEmpleado(Cesar) ok
     POST - /modificarEmpleado (Gabriel)
-    POST - /eliminarEmpleado (Dayana)
-    GET - /reporteEmpleados (Kevin)
+    POST - /eliminarEmpleado (Dayana) ok 
+    GET - /reporteEmpleados (Kevin) ok
 Discos
-    GET - /discos (Gabriel)
-    POST - /discoTitulo (Dayana)
-    POST - /discoYear (Kevin)
-    POST - /discoArtista (Cesar)
-    POST - /agregarDisco (Gabriel)
-    POST - /modificarDisco(Dayana)
-    POST - /eliminarDisco(Kevin)
-    GET - /reporteDiscos(Dayana)
+    GET - /discos (Gabriel) ok #cargar xml
+    POST - /discoTitulo (Dayana) ok
+    POST - /discoYear (Kevin) ok
+    POST - /discoArtista (Cesar) ok
+    POST - /agregarDisco (Gabriel) ok
+    POST - /modificarDisco(Dayana) ok
+    POST - /eliminarDisco(Kevin) ok
+    GET - /reporteDiscos(Dayana) ok 
 Paises
-    GET - /paises (Kevin)
-    POST - /paisMoneda(Cesar)
-    POST - /paisIdioma(Gabriel)
-    POST - /contienente(Dayana)
-    POST - /agregarPais(Kevin)
-    POST - /modificarPais(Cesar)
-    GET - /reporteRegiones(Dayana)
+    GET - /paises (Kevin) ok
+    POST - /paisMoneda(Cesar) ok
+    POST - /paisIdioma(Gabriel) ok
+    POST - /contienente(Dayana) ok 
+    POST - /agregarPais(Kevin) ok
+    POST - /modificarPais(Cesar) ok
+    GET - /reporteRegiones(Dayana) ok
 
 6 Dayana
 5 Cesar

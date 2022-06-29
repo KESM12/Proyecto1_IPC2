@@ -1,0 +1,122 @@
+Comandos para Postman
+Empleados
+    GET - /empleados  /empleados (ok)
+
+
+    POST - /empleadoNombre /empleadoNombre 
+			{
+			   "nombre": "Gabriel" 
+			}
+    POST - /empleadoDepartamento /empleadoDepartamento
+			{
+			   "departamento": "Contabilidad" 
+			}
+    POST - /empleadoSueldo /Bsueldo (ok)
+			{
+			   "salario": "2000.00" 
+			}
+    POST - /agregarEmpleado /agregarEmpleado (ok)
+			{
+			    "departamento": "Prueba",
+			    "id" : "12",
+			    "nombre" : "ultimo agregado",
+			    "puesto" : "gerente",
+			    "salario" : "12000.00"
+			}
+    POST - /modificarEmpleado /modificarEmpleado
+			{
+  			  "ID": "2",
+			    "nombre": "Gabriel",
+			    "puesto": "Contador",
+			    "salario": "14000"
+			}	
+    POST - /eliminarEmpleado /eliminarEmpleado
+		{
+ 		   "id":"89"
+		}
+    GET - /reporteEmpleados /ReporteEmpleados ok (con duda de que si funciona varias veces)
+
+Discos
+    GET - /discos /Discos ok
+
+    POST - /discoTitulo /discoTitulo
+			{
+    				"title": "red"
+			}
+    POST - /discoYear /yearDisco
+			{
+    				"year": "1987"
+			}
+    POST - /discoArtista /discoArtista
+			{
+ 			   "artist" : "bonnie tyler"
+			}
+    POST - /agregarDisco /agregarDisco
+			{
+			    "titulo":"Un verano sin ti",
+			    "artista":"Bad Bunny",
+			    "pais":"Puerto Rico",
+			    "compania":"Rimas Music",
+			    "precio": "200",
+			    "año": "2022"
+			}
+    POST - /modificarDisco /modificarDisco
+			{
+			    "title":"picture book",
+			    "artist":"Alguien diferente",
+			    "country":"Guatemala",
+			    "company":"elektra",
+			    "price":"7.20",
+			    "year":"2022"
+			}
+    POST - /eliminarDisco /eliminarDisco
+			{
+    				"title": "picture book original"
+			}
+    GET - /reporteDiscos  /reporteDiscos
+Paises
+    GET - /paises ** /cargarDatosPaises //// /Paises
+
+    POST - /paisMoneda /paisMoneda
+			{
+    				"moneda" : "Dolar"
+			}
+    POST - /paisIdioma /paisIdioma
+			{
+			   "idioma": "Español" 
+			}
+    POST - /contienente /continente
+			{
+    				"continente":"Europa"
+			}
+    POST - /agregarPais /agregarPais
+			{
+    				"PobUnit": "unidadTaro",
+				"PobYear": "1997",
+				"poblacion": "90.00 ",
+				"capital": "Malagala",
+				"continente": "Taros",
+				"idioma": "Aleman",
+				"moneda": "Fresco",
+				"nombre": "TaroCapital"
+			}
+    POST - /modificarPais /modificarPais
+			{
+ 				   "continente" : "America",
+				    "nombre" : "Guatemala",
+				    "moneda" :"Dolar",
+				    "capital" : "Washinton",
+				    "idioma" : "Ingles",
+				    "poblacion" : "17.6",
+				    "year" : "2018",
+				    "unit" : "thousands"
+			}
+
+    GET - /reporteRegiones /ReporteRegiones
+
+
+
+Nota: Cargar los xml de todos los metodos para que no den clavos en la ejecución de los Gabriel
+/cargarDatosEmpleados
+/Discos
+/cargarDatosPaises

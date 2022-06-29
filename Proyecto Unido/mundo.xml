@@ -1,87 +1,33 @@
-<?xml version="1.0" encoding = "utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <mundo>
-  <continente name="Europa">
+    <continente name="Europa">
     <pais moneda="Euro">
       <nombre>Monaco</nombre>
-      <capital>Ciudad de Monaco</capital>
-      <idioma>Francés</idioma>
+      <capital>Ciudad de monaco</capital>
+      <idioma>Frances</idioma>
       <poblacion year="2019" unit="thousands">38.964</poblacion>
     </pais>
     <pais moneda="Euro">
-      <nombre>Austria</nombre>
+      <nombre>Autria</nombre>
       <capital>Viena</capital>
-      <idioma>Alemán</idioma>
+      <idioma>Aleman</idioma>
       <poblacion year="2019" unit="millions">8.859</poblacion>
-    </pais>
-    <pais moneda="Euro">
-      <nombre>Portugal</nombre>
-      <capital>Lisboa</capital>
-      <idioma>Portugués</idioma>
-      <poblacion year="2019" unit="millions">10.28</poblacion>
-    </pais>
-    <pais moneda="Euro">
-      <nombre>Francia</nombre>
-      <capital>Paris</capital>
-      <idioma>Francés</idioma>
-      <poblacion year="2019" unit="millions">67.06</poblacion>
-    </pais>
-    <pais moneda="Euro">
-      <nombre>Alemania</nombre>
-      <capital>Berlin</capital>
-      <idioma>Alemán</idioma>
-      <poblacion year="2019" unit="millions">83.02</poblacion>
-    </pais>
-    <pais moneda="Euro">
-      <nombre>España</nombre>
-      <capital>Madrid</capital>
-      <idioma>Español</idioma>
-      <poblacion year="2019" unit="millions">46.94</poblacion>
     </pais>
   </continente>
   <continente name="America">
-    <pais moneda="Dolar">
-      <nombre>Estados unidos</nombre>
-      <capital>Washington DC</capital>
-      <idioma>Inglés</idioma>
-      <poblacion year="2019" unit="millions">328.2</poblacion>
-    </pais>
     <pais moneda="Quetzal">
       <nombre>Guatemala</nombre>
       <capital>Ciudad de Guatemala</capital>
       <idioma>Español</idioma>
       <poblacion year="2019" unit="millions">16.6</poblacion>
     </pais>
-    <pais moneda="Dolar">
-      <nombre>El Salvador</nombre>
-      <capital>San Salvador</capital>
-      <idioma>Español</idioma>
-      <poblacion year="2019" unit="millions">6.454</poblacion>
-    </pais>
-    <pais moneda="Peso argentino">
-      <nombre>Argentina</nombre>
-      <capital>Buenos Aires</capital>
-      <idioma>Español</idioma>
-      <poblacion year="2019" unit="millions">44.94</poblacion>
-    </pais>
-    <pais moneda="Real brasileño">
-      <nombre>Brasil</nombre>
-      <capital>Brasilia</capital>
-      <idioma>Portugués</idioma>
-      <poblacion year="2019" unit="millions">221</poblacion>
-    </pais>
   </continente>
-  <continente name="Asia">
-    <pais moneda="Yen">
-      <nombre>Japón</nombre>
-      <capital>Tokio</capital>
-      <idioma>Japonés</idioma>
-      <poblacion year="2021" unit="millions">125.8</poblacion>
-    </pais>
-    <pais moneda="Renminbi">
-      <nombre>China</nombre>
-      <capital>Pekin</capital>
-      <idioma>Mandarín</idioma>
-      <poblacion year="2021" unit="millions">1412</poblacion>
+  <continente name="Oceania">
+    <pais moneda="Dólar australiano">
+      <nombre>Australia</nombre>
+      <capital>Canberra</capital>
+      <idioma>Ingles</idioma>
+      <poblacion year="2020" unit="millions">25.69 </poblacion>
     </pais>
   </continente>
 </mundo>

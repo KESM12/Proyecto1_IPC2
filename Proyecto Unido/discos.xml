@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding = "utf-8" ?>
 <catalog>
     <cd>
         <title>empire burlesque</title>
@@ -32,7 +33,7 @@
         <year>1990</year>
     </cd>
     <cd>
-        
+        <!-- este titulo tiene un & -->
         <title>eros &amp; eros</title>
         <artist>eros ramazzotti</artist>
         <country>eu</country>
@@ -41,8 +42,8 @@
         <year>1997</year>
     </cd>
     <cd>
-        
-        <title>"esto tiene que salir bien"</title>
+        <!-- este titulo estará entre comillas dobles  -->
+        <title>&quot;esto tiene que salir bien&quot;</title>
         <artist>bee gees</artist>
         <country>uk</country>
         <company>polydor</company>
@@ -50,8 +51,8 @@
         <year>1998</year>
     </cd>
     <cd>
-        
-        <title>'esto tiene que salir muy bien tambien'</title>
+        <!-- este titulo estará entre comilla simples -->
+        <title>&apos;esto tiene que salir muy bien tambien&apos;</title>
         <artist>dr.hook</artist>
         <country>uk</country>
         <company>cbs</company>
@@ -188,11 +189,11 @@
     </cd>
     <cd>
         <title>picture book</title>
-        <artist>Alguien diferente</artist>
-        <country>Guatemala</country>
+        <artist>simply red</artist>
+        <country>eu</country>
         <company>elektra</company>
         <price>7.20</price>
-        <year>2022</year>
+        <year>1985</year>
     </cd>
     <cd>
         <title>red</title>
@@ -203,11 +204,11 @@
         <year>1987</year>
     </cd>
     <cd>
-        <title>segundo disco</title>
-        <artist>bonnie tyler</artist>
-        <country>uk</country>
-        <company>cbs records</company>
-        <price>9.90</price>
-        <year>1988</year>
+        <title>unchain my heart</title>
+        <artist>joe cocker</artist>
+        <country>usa</country>
+        <company>emi</company>
+        <price>8.20</price>
+        <year>1987</year>
     </cd>
-    </catalog>
+</catalog>
