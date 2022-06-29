@@ -6,7 +6,6 @@ import LeerArchivo
 from xml.dom import minidom
 import xml.etree.ElementTree as ET
 from graphviz import Digraph 
-import pandas as pd
 from xml import etree
 import json
 import os
@@ -94,7 +93,6 @@ def paisIdioma ():
 
 
 
-ContadorDiscos=0
 
 @app.route('/eliminarEmpleado', methods=['POST'])
 def eliminarEmpleado():
@@ -182,57 +180,35 @@ def modificarDisco():
 
 @app.route('/reporteDiscos', methods=['GET'])
 def reporteDiscos():
-    global ContadorDiscos
-    ruta=os.getcwd()
     discos=minidom.parse("discos.xml")
     tododiscos=discos.documentElement
-    graficadiscos=""
-    graficadiscos+="digraph G { \n"
-    graficadiscos+="node[shape=box] \n"
-    graficadiscos+="nodoRaiz[label=\"Catalogo\"] \n"
-    discograficar=tododiscos.getElementsByTagName('cd')
-    for disco in discograficar:
-        NodoDisco="cd"+str(ContadorDiscos)
-        ContadorDiscos+=1
-        graficadiscos+=NodoDisco+"[label=\" CD \"] \n"
-        graficadiscos+="nodoRaiz ->"+NodoDisco+"\n"
-        NodoTitulo=NodoDisco+"title"
-        NodoArtista=NodoDisco+"Artista"
-        NodoPais=NodoDisco+"pais"
-        NodoCompania=NodoDisco+"compania"
-        NodoPrecio=NodoDisco+"precio"
-        Nodoanio=NodoDisco+"anio"
-        AuxTitulo=disco.getElementsByTagName('title')[0].childNodes[0].nodeValue
-        AuxArtista=disco.getElementsByTagName('artist')[0].childNodes[0].nodeValue
-        AuxPais=disco.getElementsByTagName('country')[0].childNodes[0].nodeValue
-        AuxCompania=disco.getElementsByTagName('company')[0].childNodes[0].nodeValue
-        AuxPrecio=disco.getElementsByTagName('price')[0].childNodes[0].nodeValue
-        AuxAnio=disco.getElementsByTagName('year')[0].childNodes[0].nodeValue
-        Titulo=AuxTitulo.replace('"','\\"')
-        Artista=AuxArtista.replace('"','\\"')
-        Pais=AuxPais.replace('"','\\"')
-        Compania=AuxCompania.replace('"','\\"')
-        Precio=AuxPrecio.replace('"','\\"')
-        Anio=AuxAnio.replace('"','\\"')
-        graficadiscos+=NodoTitulo+"[label=\"Titulo: "+Titulo+" \"] \n"
-        graficadiscos+=NodoArtista+"[label=\"Artista: "+Artista+" \"] \n"
-        graficadiscos+=NodoPais+"[label=\"País: "+Pais+" \"] \n"
-        graficadiscos+=NodoCompania+"[label=\"Compañia: "+Compania+" \"] \n"
-        graficadiscos+=NodoPrecio+"[label=\"Precio: "+Precio+" \"] \n"
-        graficadiscos+=Nodoanio+"[label=\"Año: "+Anio+" \"] \n"
-        graficadiscos+=NodoDisco+"->"+NodoTitulo+"\n"
-        graficadiscos+=NodoTitulo+"->"+NodoPais+"\n"
-        graficadiscos+=NodoTitulo+"->"+NodoArtista+"\n"
-        graficadiscos+=NodoTitulo+"->"+NodoCompania+"\n"
-        graficadiscos+=NodoTitulo+"->"+NodoPrecio+"\n"
-        graficadiscos+=NodoTitulo+"->"+Nodoanio+"\n"
-    graficadiscos+="}"
-    DiscosDot=open("Discosdot.dot",'w',encoding="utf-8")
-    DiscosDot.write(graficadiscos)
-    DiscosDot.close()
-    comando = "dot -Tjpg Discosdot.dot -o ReporteDiscos.jpg"
-    os.system(comando)
-    return send_from_directory(ruta,path="ReporteDiscos.jpg", as_attachment=False)
+    listadiscos=tododiscos.getElementsByTagName('cd')
+    Discos = Digraph()
+    contador = 0
+    contador2 = 0
+    Discos.node('Z', 'Desktop Records', shape='folder')
+    while True:
+        for cd in listadiscos:
+            contador +=1
+            Discos.node(f'A{contador}', 'cd: ' + cd.getElementsByTagName('title')[0].childNodes[0].nodeValue, shape='box3d')
+            contador2 += 1
+            Discos.node(f'B{contador2}', 'Artista: '+cd.getElementsByTagName('artist')[0].childNodes[0].nodeValue,shape='box')
+            Discos.node(f'C{contador2}', 'País: '+cd.getElementsByTagName('country')[0].childNodes[0].nodeValue,shape='box')
+            Discos.node(f'D{contador2}', 'Compañia: '+cd.getElementsByTagName('company')[0].childNodes[0].nodeValue,shape='box')
+            Discos.node(f'E{contador2}', 'Precio: '+cd.getElementsByTagName('company')[0].childNodes[0].nodeValue,shape='box')
+            Discos.node(f'E{contador2}', 'Año: '+cd.getElementsByTagName('year')[0].childNodes[0].nodeValue,shape='box')
+                #------------------------------------------------
+            Discos.edge(f'B{contador2}', f'C{contador2}')
+            Discos.edge(f'C{contador2}', f'D{contador2}')
+            Discos.edge(f'D{contador2}', f'E{contador2}')
+                
+            Discos.edge(f'A{contador}', f'B{contador2}')
+            Discos.edge('Z', f'A{contador}')
+        break
+    contador += 1
+    Discos.render('Reporte Discos',directory="C:/Users/SM/Desktop/IPC2 VACAS/Proyecto1_IPC2/DesktopWeb/Web/static", format='jpg', view=True)
+    return 'Se genero el gráfico de discos.'
+
 
 @app.route('/continente', methods=['POST'])
 def continente():
@@ -267,63 +243,7 @@ def continente():
             mensaje='No se encontro continente',
         )
 
-@app.route('/reporteRegiones', methods=['GET'])
-def reporteRegiones():
-    mundo=minidom.parse("mundo.xml")
-    todomundo=mundo.documentElement
-    graficaregiones=""
-    graficaregiones+="digraph G { \n"
-    graficaregiones+="node[shape=box] \n"
-    graficaregiones+="nodoRaiz[label=\"Empresa\"] \n"
-    continentesgraficar=todomundo.getElementsByTagName('continente')
-    for continente in continentesgraficar:
-        Nodoregion="continente"+continente.attributes['name'].value
-        graficaregiones+=Nodoregion+"[label=\" Continente: "+continente.attributes['name'].value+"\"] \n"
-        graficaregiones+="nodoRaiz ->"+Nodoregion+"\n"
-        listapaises=continente.getElementsByTagName('pais')
-        for pais in listapaises:
-            auxnombrepais=pais.getElementsByTagName('nombre')[0].childNodes[0].nodeValue
-            nombrepais=auxnombrepais.replace('"','\\"')
-            NodoID="ID"+nombrepais
-            graficaregiones+=NodoID+"[label=\"Pais: "+nombrepais+" \"] \n"
-            graficaregiones+=Nodoregion+"->"+NodoID+"\n"
-            NodoCapitalPais=NodoID+"capital"
-            NodoMonedaPais=NodoID+"moneda"
-            NodoIdiomaPais=NodoID+"idioma"
-            NodoPoblacionPais=NodoID+"poblacion"
-            AuxCapitalPais=pais.getElementsByTagName('capital')[0].childNodes[0].nodeValue
-            AuxMonedaPais=pais.attributes['moneda'].value
-            AuxIdiomaPais=pais.getElementsByTagName('idioma')[0].childNodes[0].nodeValue
-            AuxPoblacionPais=pais.getElementsByTagName('poblacion')[0].childNodes[0].nodeValue
-            AuxAnioPais=pais.getElementsByTagName('poblacion')[0].attributes['year'].value
-            AuxUnidadPais=pais.getElementsByTagName('poblacion')[0].attributes['unit'].value
-            CapitalPais=AuxCapitalPais.replace('"','\\"')
-            MonedaPais=AuxMonedaPais.replace('"','\\"')
-            IdiomaPais=AuxIdiomaPais.replace('"','\\"')
-            PoblacionPais=AuxPoblacionPais.replace('"','\\"')
-            AnioPais=AuxAnioPais.replace('"','\\"')
-            UnidadPais=AuxUnidadPais.replace('"','\\"')
-            if UnidadPais=="thousands" or UnidadPais=="\'thousands\'":
-                UnidadPais="miles"
-            elif UnidadPais=="millions" or UnidadPais=="\'millions\'":
-                UnidadPais="millones"
-            graficaregiones+=NodoCapitalPais+"[label=\"Capital: "+CapitalPais+" \"] \n"
-            graficaregiones+=NodoMonedaPais+"[label=\"Moneda: "+MonedaPais+" \"] \n"
-            graficaregiones+=NodoIdiomaPais+"[label=\"Idioma: "+IdiomaPais+" \"] \n"
-            graficaregiones+=NodoPoblacionPais+"[label=\"Población: "+PoblacionPais+" "+UnidadPais+" (hasta el año "+AnioPais+" ) \"] \n"
-            graficaregiones+=NodoID+"->"+NodoCapitalPais+"\n"
-            graficaregiones+=NodoID+"->"+NodoMonedaPais+"\n"
-            graficaregiones+=NodoID+"->"+NodoIdiomaPais+"\n"
-            graficaregiones+=NodoID+"->"+NodoPoblacionPais+"\n"
-    graficaregiones+="}"
-    Dot=open("mundo",'w',encoding="utf-8")
-    Dot.write(graficaregiones)
-    Dot.close()
-    mundo.render('Reporte Regiones',directory="C:/Users/SM/Desktop/IPC2 VACAS/Proyecto1_IPC2/DesktopWeb/Web/static", format='jpg', view=True)
-    comando= "dot -Tjpg mundo.dot -o ReporteMundo.jpg"
-    os.system(comando)
-    ruta=os.getcwd()
-    return send_from_directory(ruta,path="ReporteMundo.jpg", as_attachment=False)      
+  
 
 
 

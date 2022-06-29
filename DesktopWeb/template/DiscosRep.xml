@@ -18,7 +18,7 @@
         </ul>
     </div>
     <div id="contenido">
-        <img src="{% static 'Reporte Empleados.jpg' %}">
+        <img src="{% static 'Reporte Discos.jpg' %}">
     </div>
 
 </body>
