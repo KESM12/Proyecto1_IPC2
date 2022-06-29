@@ -1,7 +1,16 @@
 body{
     background-color:rgba(0, 0, 0, 0.844);
 }
-
+#nombre{
+    background-color: rgb(255, 248, 248);
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    
+}
 
 #navegador ul {
     list-style-type: none;
@@ -62,5 +71,6 @@ body{
     max-height: 100%;
     padding-top: 5%;
   }
+
 
   

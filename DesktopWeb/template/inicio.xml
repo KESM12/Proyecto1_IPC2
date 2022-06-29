@@ -16,6 +16,11 @@
             <li><a href="Paises">Paises</a></li>
         </ul>
     </div>
-    
+    <div id="nombre">
+    <p>Kevin Estuardo Secaida Molina - 201602404</p>
+    <p>Gabriel Enrique Perez Meza - 201900221</p>
+    <p>César André Ramírez Dávila - 202010816</p>
+    <p>Dayana Alejandra Reyes Rodríguez  - 202002364</p>
+    </div>
 </body>
 </html>
