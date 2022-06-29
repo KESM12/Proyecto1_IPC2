@@ -18,8 +18,8 @@
         </ul>
     </div>
     <div id="contenido">
-        <form method="get" action="/">
-            <input align="center" type="submit" value="Reporte Grafico">
+        <form method="get" action="RepPaises">
+            <input align="center" type="submit" value="boton">
         </form>
     </div>
 

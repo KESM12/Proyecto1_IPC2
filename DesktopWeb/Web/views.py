@@ -15,3 +15,6 @@ def Paises(request):
 
 def RepEmpleados(request):
     return render(request, "EmpleadosRep.xml")
+
+def RepPaises(request):
+    return render(request, "PaisesRep.xml")

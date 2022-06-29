@@ -183,8 +183,7 @@ def modificarDisco():
 @app.route('/reporteDiscos', methods=['GET'])
 def reporteDiscos():
     global ContadorDiscos
-    #ruta=os.getcwd()
-    ruta = "C:/Users/SM/Desktop/IPC2 VACAS/Proyecto1_IPC2/DesktopWeb/Web/static"
+    ruta=os.getcwd()
     discos=minidom.parse("discos.xml")
     tododiscos=discos.documentElement
     graficadiscos=""
@@ -231,7 +230,7 @@ def reporteDiscos():
     DiscosDot=open("Discosdot.dot",'w',encoding="utf-8")
     DiscosDot.write(graficadiscos)
     DiscosDot.close()
-    comando= "dot -Tjpg Discosdot.dot -o ReporteDiscos.jpg"
+    comando = "dot -Tjpg Discosdot.dot -o ReporteDiscos.jpg"
     os.system(comando)
     return send_from_directory(ruta,path="ReporteDiscos.jpg", as_attachment=False)
 
@@ -317,13 +316,13 @@ def reporteRegiones():
             graficaregiones+=NodoID+"->"+NodoIdiomaPais+"\n"
             graficaregiones+=NodoID+"->"+NodoPoblacionPais+"\n"
     graficaregiones+="}"
-    Dot=open("mundo.dot",'w',encoding="utf-8")
+    Dot=open("mundo",'w',encoding="utf-8")
     Dot.write(graficaregiones)
     Dot.close()
+    mundo.render('Reporte Regiones',directory="C:/Users/SM/Desktop/IPC2 VACAS/Proyecto1_IPC2/DesktopWeb/Web/static", format='jpg', view=True)
     comando= "dot -Tjpg mundo.dot -o ReporteMundo.jpg"
     os.system(comando)
-    #ruta=os.getcwd()
-    ruta = "C:/Users/SM/Desktop/IPC2 VACAS/Proyecto1_IPC2/DesktopWeb/Web/static"
+    ruta=os.getcwd()
     return send_from_directory(ruta,path="ReporteMundo.jpg", as_attachment=False)      
 
 
@@ -534,12 +533,49 @@ def ReporteEmpleados():
                 Empleados.edge(f'B{numero2}', f'C{numero2}')
                 Empleados.edge(f'C{numero2}', f'D{numero2}')
                 Empleados.edge(f'D{numero2}', f'E{numero2}')
+                
                 Empleados.edge(f'A{numero}', f'B{numero2}')
             Empleados.edge('Z', f'A{numero}')
         break
     numero += 1
-    Empleados.render('Reporte Empleados',directory="C:/Users/SM/Desktop/IPC2 VACAS/Proyecto1_IPC2/DesktopWeb/Web/static", format='jpg', view=True)
+    Empleados.render('Reporte Empleados', directory="C:/Users/SM/Desktop/IPC2 VACAS/Proyecto1_IPC2/DesktopWeb/Web/static", format='jpg', view=True)
     return 'Se genero el gráfico de empleados.'
+
+@app.route('/ReporteRegiones') #quemar la ruta para mostrarla en frontend
+def ReporteRegiones():
+    xml_regiones = ET.parse('mundo.xml')
+    xml_datos = xml_regiones.getroot()
+    Regiones = Digraph()
+    numero = 0
+    numero2 = 0
+    Regiones.node('Z', 'Desktop Records', shape='folder')
+    while True:
+        for reg in xml_datos:
+            numero +=1
+            Regiones.node(f'A{numero}', 'Continente: ' + reg.attrib['name'], shape='box3d')
+            lst_emp = reg.findall('pais')
+            for emp in lst_emp:
+                numero2 += 1
+                Regiones.node(f'B{numero2}', 'Moneda: '+emp.attrib['moneda'],shape='box')
+                Regiones.node(f'C{numero2}', 'Nombre: '+emp.find('nombre').text,shape='box')
+                Regiones.node(f'D{numero2}', 'Capital: '+emp.find('capital').text,shape='box')
+                Regiones.node(f'E{numero2}', 'Idioma: '+emp.find('idioma').text,shape='box')
+                Regiones.node(f'F{numero2}', 'PobYear: '+emp.findall('poblacion')[0].attrib['year'],shape='box')
+                Regiones.node(f'G{numero2}', 'PobUnit: '+emp.findall('poblacion')[0].attrib['unit'],shape='box')
+                Regiones.node(f'H{numero2}', 'Poblacion: '+emp.find('poblacion').text,shape='box')
+                #------------------------------------------------
+                Regiones.edge(f'B{numero2}', f'C{numero2}')
+                Regiones.edge(f'C{numero2}', f'D{numero2}')
+                Regiones.edge(f'D{numero2}', f'E{numero2}')
+                Regiones.edge(f'E{numero2}', f'F{numero2}')
+                Regiones.edge(f'F{numero2}', f'G{numero2}')
+                Regiones.edge(f'G{numero2}', f'H{numero2}')
+                Regiones.edge(f'A{numero}', f'B{numero2}')
+            Regiones.edge('Z', f'A{numero}')
+        break
+    numero += 1
+    Regiones.render('Reporte Regiones',directory="C:/Users/SM/Desktop/IPC2 VACAS/Proyecto1_IPC2/DesktopWeb/Web/static", format='jpg', view=True)
+    return 'Se genero el gráfico de Regiones.'
 
 @app.route('/yearDisco', methods=["POST"])
 def yearDisco():
