@@ -1,3 +1,4 @@
+from msilib.schema import Directory
 from flask import Flask, request, jsonify,send_from_directory
 from flask.json import jsonify
 from flask_cors import CORS
@@ -182,7 +183,8 @@ def modificarDisco():
 @app.route('/reporteDiscos', methods=['GET'])
 def reporteDiscos():
     global ContadorDiscos
-    ruta=os.getcwd()
+    #ruta=os.getcwd()
+    ruta = "C:/Users/SM/Desktop/IPC2 VACAS/Proyecto1_IPC2/DesktopWeb/Web/static"
     discos=minidom.parse("discos.xml")
     tododiscos=discos.documentElement
     graficadiscos=""
@@ -320,7 +322,8 @@ def reporteRegiones():
     Dot.close()
     comando= "dot -Tjpg mundo.dot -o ReporteMundo.jpg"
     os.system(comando)
-    ruta=os.getcwd()
+    #ruta=os.getcwd()
+    ruta = "C:/Users/SM/Desktop/IPC2 VACAS/Proyecto1_IPC2/DesktopWeb/Web/static"
     return send_from_directory(ruta,path="ReporteMundo.jpg", as_attachment=False)      
 
 
@@ -686,4 +689,4 @@ def agregarPais():
 
 #METODO PRINCIPAL
 if(__name__=='__main__'):
-    app.run(host="0.0.0.0",port=9000,debug=False)
+    app.run(host="0.0.0.0",port=7000,debug=False)
