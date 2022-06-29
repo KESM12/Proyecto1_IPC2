@@ -13,11 +13,21 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-@app.route("/cargarDatosEmpleados", methods=["POST"])
+@app.route("/Empleados", methods=["GET"])
 def CargarDatos():
     datos = request.data
     LeerArchivo.cargarDatosEmpleados(datos)
     return datos
+
+def cargarDatosEmpleados():
+    aux = []
+    empleado = LeerArchivo.listaE.retornar()
+    LeerArchivo.listaE.escribirArchivo()
+    for empleadoN in empleado:
+        aux.append({"ID empleado": empleadoN.ide, "Nombre empleado": empleadoN.nombre, "Puesto empleado": empleadoN.puesto, "Salario empleado": empleadoN.salario, "Departamento empleado": empleadoN.depto})
+    return jsonify(aux)
+    
+
 
 @app.route("/empleadoNombre", methods=["POST"])
 def empleadoNombre():
@@ -51,7 +61,7 @@ def empleadoDepartamento():
     aux.append({"ID empleado": empleadoN.ide, "Nombre empleado": empleadoN.nombre, "Puesto empleado": empleadoN.puesto, "Salario empleado": empleadoN.salario, "Departamento empleado": empleadoN.depto})
     return jsonify(aux)
 
-@app.route("/Discos", methods=["GET"])
+@app.route("/Discos")
 def cargarDatosDiscos():
     aux = []
     datos = request.data
@@ -125,6 +135,7 @@ def discoTitulo():
     listadiscos=todosdiscos.getElementsByTagName('cd')
     for cd in listadiscos:
         if cd.getElementsByTagName('title')[0].childNodes[0].nodeValue ==discotitulo:
+            titulo = cd.getElementsByTagName('title')[0].childNodes[0].nodeValue
             artista=cd.getElementsByTagName('artist')[0].childNodes[0].nodeValue
             pais=cd.getElementsByTagName('country')[0].childNodes[0].nodeValue
             compania=cd.getElementsByTagName('company')[0].childNodes[0].nodeValue
@@ -132,7 +143,8 @@ def discoTitulo():
             anio=cd.getElementsByTagName('year')[0].childNodes[0].nodeValue
             discomostrado=True
             return jsonify(
-                mensaje="Usuario encontrado",
+                mensaje="Disco encontrado",
+                title=titulo,
                 artist=artista,
                 country=pais,
                 company=compania,
@@ -273,11 +285,17 @@ def escribirJSONempleado(raiz_):
         for empleado in departamento:
             contadorEmpleados+=1 
             cadena+="{"+"\n"
-            idEmpleado=empleado.attrib['id']
-            nombreEmpleado=empleado.findall('nombre')[0].text
-            cadena+="\"id\":"+"\""+idEmpleado+"\""+",\n"
-            cadena+="\"nombre\":"+"\""+nombreEmpleado+"\""+"\n"
-            cadena+="}"+"\n"
+            #---------------------------
+            ident = empleado.attrib['id']
+            nombre = empleado.findall('nombre')[0].text
+            puesto = empleado.findall('puesto')[0].text
+            salario = empleado.findall('salario')[0].text
+            cadena += "\"id\":"+"\""+ident+"\""+",\n"
+            cadena += "\"nombre\":"+"\""+nombre+"\""+",\n"
+            cadena += "\"puesto\":"+"\""+puesto+"\""+",\n"
+            cadena += "\"salario\":"+"\""+salario+"\""+"\n"
+            cadena += "}"+"\n"
+            #---------------------------
             if(contadorEmpleados<cantEmpleados):
                 cadena+=","+"\n"
         cadena+="]"+"\n"
@@ -547,9 +565,10 @@ def eliminarDisco():
             Discos.remove(discosEncontrados)
             xml_datadisc.remove(disc)
             xml_discos.write('Discos.xml')
-    return jsonify(
-        discos = Discos
-    )
+            return f'Disco {TituloB} eliminado correctamente'
+        else:
+            return f'El Disco {TituloB} no se encuentra en el archivo.'
+    
 
 @app.route('/Paises')
 def Paises():
@@ -634,7 +653,7 @@ def agregarPais():
     xml_mundo = ET.ElementTree(paisesnuevos)
     xml_mundo.write('mundo.xml')
     parser = etree.XMLParser(remove_blank_text=True,compact=True)
-    mundoxml = etree.parse("Mundo.xml", parser=parser)
+    mundoxml = etree.parse("mundo.xml", parser=parser)
     #equipoXML = arbolXML.getroot()
     mundoxml.write("mundo.xml", pretty_print=True,encoding="utf-8")
     paisNuevo = {"continente":NuevoConti, "moneda": NuevoMoneda, "nombre": NuevoNombre, "capital": NuevoCapital, "idioma": NuevoIdioma, "Poblacion" : NuevoPoblacion, "PobYear": NuevoPobYear, "PobUnit": NuevoPobUnit}
@@ -645,4 +664,4 @@ def agregarPais():
 
 #METODO PRINCIPAL
 if(__name__=='__main__'):
-    app.run(host="0.0.0.0",port=7000,debug=False)
+    app.run(host="0.0.0.0",port=9000,debug=False)

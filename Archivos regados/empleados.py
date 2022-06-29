@@ -1,6 +1,3 @@
-import os
-
-
 class Empleado:
     def __init__(self, nombre, puesto, salario, ide,depto):
         self.nombre = nombre
@@ -143,42 +140,4 @@ class ListaEmpleados:
                 return actual.empleado
             else:
                 actual = actual.siguiente
-
-    def escribirArchivo(self):
-        departamentos = self.ObtenerDepto()
-        ruta = os.path.dirname(os.path.abspath(__file__))
-        cabeza = f'<?xml version="1.0" encoding = "utf-8"?> \n'
-        cabeza += '<empresa> \n'
         
-        for departamento in departamentos:
-            primero = self.primero
-            cabeza += f'\t<departamento departamento="{departamento}"> \n'
-            while primero.siguiente!= None:
-                if primero.empleado.depto == departamento:
-                    cabeza += f'\t\t<empleado id="{primero.empleado.ide}"> \n'
-                    cabeza += f'\t\t\t<nombre>{primero.empleado.nombre}</nombre>\n'
-                    cabeza += f'\t\t\t<puesto>{primero.empleado.puesto}</puesto>\n'
-                    cabeza += f'\t\t\t<salario>{primero.empleado.salario}</salario>\n'
-                    cabeza += f'\t\t</empleado>\n'
-                primero = primero.siguiente
-            if primero.empleado.depto == departamento:
-                cabeza += f'\t\t<empleado id="{primero.empleado.ide}"> \n'
-                cabeza += f'\t\t\t<nombre>{primero.empleado.nombre}</nombre>\n'
-                cabeza += f'\t\t\t<puesto>{primero.empleado.puesto}</puesto>\n'
-                cabeza += f'\t\t\t<salario>{primero.empleado.salario}</salario>\n'
-                cabeza += f'\t\t</empleado>\n'
-            cabeza += f'\t</departamento>\n'
-        cabeza += '</empresa>'
-        
-        with open(f'{ruta}/empleados.xml','w', encoding="utf-8") as archivo:
-            archivo.write(cabeza)
-            archivo.close()
-            
-    def retornar(self):
-        empleado = []
-        primero = self.primero
-        while primero.siguiente!= None:
-            empleado.append(primero.empleado)
-            primero = primero.siguiente
-        empleado.append(primero.empleado)
-        return empleado
