@@ -232,6 +232,7 @@ def reporteDiscos():
     comando= "dot -Tjpg Discosdot.dot -o ReporteDiscos.jpg"
     os.system(comando)
     return send_from_directory(ruta,path="ReporteDiscos.jpg", as_attachment=False)
+
 @app.route('/continente', methods=['POST'])
 def continente():
     contienentemostrado=False
@@ -534,7 +535,7 @@ def ReporteEmpleados():
             Empleados.edge('Z', f'A{numero}')
         break
     numero += 1
-    Empleados.render('Reporte Empleados', format='jpg', view=True)
+    Empleados.render('Reporte Empleados',directory="C:/Users/SM/Desktop/IPC2 VACAS/Proyecto1_IPC2/DesktopWeb/Web/static", format='jpg', view=True)
     return 'Se genero el gráfico de empleados.'
 
 @app.route('/yearDisco', methods=["POST"])
@@ -682,3 +683,7 @@ def agregarPais():
     return jsonify(
         paises = Paises
     )
+
+#METODO PRINCIPAL
+if(__name__=='__main__'):
+    app.run(host="0.0.0.0",port=9000,debug=False)
