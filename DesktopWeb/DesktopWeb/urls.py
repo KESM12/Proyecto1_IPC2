@@ -23,5 +23,6 @@ urlpatterns = [
     path('Discos', views.Discos),
     path('Paises', views.Paises),
     path('RepEmpleados', views.RepEmpleados),
-    path('RepEmpleados', views.RepPaises),    
+    path('RepPaises', views.RepPaises),    
+    path('RepDiscos', views.RepDiscos),    
 ]

@@ -19,7 +19,7 @@
     </div>
     <div id="contenido">
         <form method="get" action="RepPaises">
-            <input align="center" type="submit" value="boton">
+            <input align="center" type="submit" value="Reporte Grafico">
         </form>
     </div>
 

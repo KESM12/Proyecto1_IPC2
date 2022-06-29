@@ -18,3 +18,6 @@ def RepEmpleados(request):
 
 def RepPaises(request):
     return render(request, "PaisesRep.xml")
+
+def RepDiscos(request):
+    return render(request, "DiscosRep.xml")

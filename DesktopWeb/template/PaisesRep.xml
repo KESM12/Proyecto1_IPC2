@@ -10,7 +10,7 @@
     <div id="navegador">
         <ul>
             <form method="get" action="/">
-                <input type="image" src="{% static 'Reporte Regiones.jpeg' %}">
+                <input type="image" src="{% static 'logo.jpeg' %}">
             </form>
             <li><a href="Empleados">Empleados</a></li>
             <li><a href="Discos">Discos</a></li>
@@ -18,7 +18,7 @@
         </ul>
     </div>
     <div id="contenido">
-        <img src="{% static 'Reporte Empleados.jpg' %}">
+        <img src="{% static 'Reporte Regiones.jpg' %}">
     </div>
 
 </body>

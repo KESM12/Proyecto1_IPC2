@@ -1,6 +1,27 @@
-<div id="navegador">
-<ul>
-<li><a href="Discos">Discos</a></li>
-<li><a href="/">Inicio</a></li>
-</ul>
-</div>
+</div><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Desktop Records</title>
+    {% load static %}
+    <link rel="stylesheet" type = "text/css" href="{% static 'estilos.css' %}">
+</head>
+<body>
+    <div id="navegador">
+        <ul>
+            <form method="get" action="/">
+                <input type="image" src="{% static 'logo.jpeg' %}">
+            </form>
+            <li><a href="Empleados">Empleados</a></li>
+            <li><a href="Discos">Discos</a></li>
+            <li><a href="Paises">Paises</a></li>
+        </ul>
+    </div>
+    <div id="contenido">
+        <form method="get" action="RepDiscos">
+            <input align="center" type="submit" value="Reporte Grafico">
+        </form>
+    </div>
+
+</body>
+</html>
